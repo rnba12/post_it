@@ -11,4 +11,5 @@
 ## Usage
 
 - Open `index.html` with live server to access client side on the browser! :))))
-- When you create a post, make a note of the ID in the URL if you ever want to see that post again
+- When you publish a story, make a note of the ID in the URL if you ever want to see that post again
+- Try out this ID: 63910c6fbf09f2e41f4f97cc
