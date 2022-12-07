@@ -115,6 +115,13 @@ main {
   overflow-wrap: break-word;
 }
 
+#postId {
+  padding-top: 25px;
+  font-size: 0.9rem;
+  color: rgb(117, 117, 117);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .submit-container {
   display: flex;
   flex-direction: column;

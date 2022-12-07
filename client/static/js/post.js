@@ -1,6 +1,7 @@
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const story = document.querySelector("#story");
+const id = document.querySelector("#postId");
 
 window.addEventListener("load", () => {
   const postId = window.location.href.split("=")[1];
@@ -11,6 +12,7 @@ window.addEventListener("load", () => {
       title.textContent = data.title;
       author.textContent = `${data.author} - ${data.date}`;
       story.textContent = data.story;
+      id.textContent = `ID - ${data.id}`;
     })
   );
 });
