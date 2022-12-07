@@ -19,12 +19,12 @@ async function postForm(e) {
 
   console.log(options.body);
 
-  window.location.href = "./static/html/post.html";
-  //   await fetch(url, options).then((res) =>
-  //     res.json().then((data) => {
-  //       console.log(data);
-  //     })
-  //   );
+  //   window.location.href = "./static/html/post.html";
+  await fetch(url, options).then((res) =>
+    res.json().then((data) => {
+      console.log(data);
+    })
+  );
 }
 
 titleInput.addEventListener("input", () => {
