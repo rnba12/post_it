@@ -1,4 +1,8 @@
 const form = document.querySelector("form");
+const titleInput = document.querySelector("#title");
+const titleLabel = document.querySelector(".title-label");
+const nameInput = document.querySelector("#name");
+const nameLabel = document.querySelector(".name-label");
 
 form.addEventListener("submit", postForm);
 
@@ -22,3 +26,19 @@ async function postForm(e) {
   //     })
   //   );
 }
+
+titleInput.addEventListener("input", () => {
+  if (titleInput.value.length > 0) {
+    titleLabel.classList.remove("hidden");
+  } else {
+    titleLabel.classList.add("hidden");
+  }
+});
+
+nameInput.addEventListener("input", () => {
+  if (nameInput.value.length > 0) {
+    nameLabel.classList.remove("hidden");
+  } else {
+    nameLabel.classList.add("hidden");
+  }
+});
