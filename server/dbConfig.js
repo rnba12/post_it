@@ -1,9 +1,9 @@
 const { MongoClient } = require('mongodb');
 
  const init = async () => {
-    const uri = "mongodb+srv://post_itDB:postit@cluster0.2xgoc5b.mongodb.net/post_it?retryWrites=true&w=majority";
+    const uri = process.env.DB_URL;
+    const dbName = process.env.DB_NAME
     let client = await MongoClient.connect(uri);
-    console.log("Connected to databse");
-    return client.db("post_it")
+    return client.db(dbName);
 }
 module.exports = { init };
