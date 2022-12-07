@@ -3,6 +3,7 @@ const titleInput = document.querySelector("#title");
 const titleLabel = document.querySelector(".title-label");
 const authorInput = document.querySelector("#author");
 const nameLabel = document.querySelector(".name-label");
+const storyInput = document.querySelector("#story")
 
 form.addEventListener("submit", postForm);
 
@@ -53,3 +54,25 @@ findPostInput.addEventListener("keypress", (e) => {
     window.location.href = `./static/html/post.html?id=${findPostInput.value}`;
   }
 });
+
+//
+
+titleInput.addEventListener('keydown', (e) => {
+  if (e.key == "ArrowDown") {
+    authorInput.focus();
+  } 
+});
+
+storyInput.addEventListener('keydown', (e) => {
+  if (e.key == "ArrowUp") {
+    authorInput.focus();
+  } 
+});
+
+authorInput.addEventListener('keydown', (e) => {
+  if (e.key == "ArrowUp") {
+    titleInput.focus();
+  } else if (e.key == "ArrowDown") {
+    storyInput.focus();
+  }
+})
