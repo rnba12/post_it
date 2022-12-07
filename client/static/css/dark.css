@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
+  background-color: black;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
+  
 }
 
 main {
@@ -21,16 +23,18 @@ main {
   position: fixed;
   left: 25px;
   top: 10px;
-  content: url('../images/moon.png');
+  content: url('../images/sun2.png');
+  border-radius: 20px;
   width: 45px;
   height: 45px;
 }
 
 #find-post {
+  color: white;
   width: 50%;
   padding: 5px 20px;
   border-radius: 20px;
-  border: 1px solid black;
+  border: 1px solid rgb(179, 179, 179);
   font-size: 1rem;
 }
 
@@ -56,6 +60,7 @@ main {
   margin: 0;
   padding: 7px 20px;
   border: 0;
+  color: white;
 }
 
 .text-inputs > *:focus {
@@ -108,33 +113,13 @@ main {
   font-size: 1.1rem;
 }
 
-.submit-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #submit {
   height: 30px;
   padding: 0 20px;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 20px;
   background-color: transparent;
   cursor: pointer;
   margin-top: 7px;
-}
-
-.error-message {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  color: rgb(255, 90, 82);
-  font-weight: 100;
-  text-align: center;
-  width: 100px;
-  transition: opacity 0.2s;
-}
-
-.error::-webkit-input-placeholder {
-  transition: color 0.2s;
-  color: rgb(255, 90, 82);
+  color: white;
 }

@@ -32,7 +32,7 @@ async function postForm(e) {
 
   await fetch(url, options).then((res) =>
     res.json().then((data) => {
-      window.location.href = `./static/html/post.html?id=${data.id}`;
+      window.location.href = `./post.html?id=${data.id}`;
     })
   );
 }
@@ -56,7 +56,7 @@ authorInput.addEventListener("input", () => {
 const findPostInput = document.querySelector("#find-post");
 findPostInput.addEventListener("keypress", (e) => {
   if (e.key == "Enter") {
-    window.location.href = `./static/html/post.html?id=${findPostInput.value}`;
+    window.location.href = `./post.html?id=${findPostInput.value}`;
   }
 });
 
