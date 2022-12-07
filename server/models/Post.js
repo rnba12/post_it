@@ -5,6 +5,7 @@ class Post {
   constructor(data) {
     this.id = data.id;
     this.title = data.title;
+    this.author = data.author;
     this.story = data.story;
   }
 
@@ -43,16 +44,15 @@ class Post {
   static create(body) {
     return new Promise(async (resolve, reject) => {
       try {
-        const { title, name, story } = body;
-        console.log(title, name, story);
+        const { title, author, story } = body;
+        console.log(title, author, story);
         const db = await init();
-        let postsData = await db
-          .collection("posts")
-          .insertOne({ title, name, story });
-        console.log(postsData);
-        let newPost = new Post(postsData.ops[0]);
+        let postsData = await db.collection("posts").insertOne(body);
+        console.log(postsData.insertedId);
+        let newPost = new Post({ ...body, id: postsData.insertedId });
         resolve(newPost);
       } catch (err) {
+        console.log(err);
         reject("Error creating post");
       }
     });
