@@ -12,10 +12,15 @@ async function postForm(e) {
 
   const url = `http://localhost:3000/posts`;
 
+  const date = dayjs().format("MMMM DD, YYYY");
+
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+    body: JSON.stringify({
+      ...Object.fromEntries(new FormData(e.target)),
+      date: date,
+    }),
   };
 
   console.log(options.body);

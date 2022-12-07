@@ -1,5 +1,6 @@
 const { init } = require("../dbConfig");
 const { ObjectId } = require("mongodb");
+const dayjs = require("dayjs");
 
 class Post {
   constructor(data) {
@@ -7,6 +8,7 @@ class Post {
     this.title = data.title;
     this.author = data.author;
     this.story = data.story;
+    this.date = data.date;
   }
 
   static get all() {
@@ -44,15 +46,11 @@ class Post {
   static create(body) {
     return new Promise(async (resolve, reject) => {
       try {
-        const { title, author, story } = body;
-        console.log(title, author, story);
         const db = await init();
         let postsData = await db.collection("posts").insertOne(body);
-        console.log(postsData.insertedId);
         let newPost = new Post({ ...body, id: postsData.insertedId });
         resolve(newPost);
       } catch (err) {
-        console.log(err);
         reject("Error creating post");
       }
     });

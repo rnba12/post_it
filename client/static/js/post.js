@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     res.json().then((data) => {
       console.log(data);
       title.textContent = data.title;
-      author.textContent = data.author;
+      author.textContent = `${data.author} - ${data.date}`;
       story.textContent = data.story;
     })
   );
