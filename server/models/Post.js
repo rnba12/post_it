@@ -1,5 +1,6 @@
 const { init } = require("../dbConfig");
 const { ObjectId } = require("mongodb");
+const dayjs = require("dayjs");
 
 class Post {
   constructor(data) {
@@ -7,6 +8,7 @@ class Post {
     this.title = data.title;
     this.author = data.author;
     this.story = data.story;
+    this.date = dayjs().format("MMMM DD, YYYY");
   }
 
   static get all() {
