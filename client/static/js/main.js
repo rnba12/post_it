@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
 const titleLabel = document.querySelector(".title-label");
-const nameInput = document.querySelector("#name");
+const authorInput = document.querySelector("#author");
 const nameLabel = document.querySelector(".name-label");
 
 form.addEventListener("submit", postForm);
@@ -19,10 +19,9 @@ async function postForm(e) {
 
   console.log(options.body);
 
-  //   window.location.href = "./static/html/post.html";
   await fetch(url, options).then((res) =>
     res.json().then((data) => {
-      console.log(data);
+      window.location.href = `./static/html/post.html?id=${data.id}`;
     })
   );
 }
@@ -35,10 +34,17 @@ titleInput.addEventListener("input", () => {
   }
 });
 
-nameInput.addEventListener("input", () => {
-  if (nameInput.value.length > 0) {
+authorInput.addEventListener("input", () => {
+  if (authorInput.value.length > 0) {
     nameLabel.classList.remove("hidden");
   } else {
     nameLabel.classList.add("hidden");
+  }
+});
+
+const findPostInput = document.querySelector("#find-post");
+findPostInput.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    window.location.href = `./static/html/post.html?id=${findPostInput.value}`;
   }
 });
