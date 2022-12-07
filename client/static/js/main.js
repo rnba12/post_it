@@ -41,3 +41,10 @@ authorInput.addEventListener("input", () => {
     nameLabel.classList.add("hidden");
   }
 });
+
+const findPostInput = document.querySelector("#find-post");
+findPostInput.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    window.location.href = `./static/html/post.html?id=${findPostInput.value}`;
+  }
+});
