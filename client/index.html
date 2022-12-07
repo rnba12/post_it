@@ -7,22 +7,23 @@
     <title>Post It</title>
     <link rel="stylesheet" href="./static/css/styles.css" />
     <script defer src="./static/js/main.js"></script>
-    <script defer src="./static/js/requests.js"></script>
   </head>
   <body>
     <main>
-      <form action="">
-        <div class="text-inputs">
-          <input type="text" name="title" id="title" placeholder="Title..." />
-          <input type="text" name="name" id="name" placeholder="Your name" />
-          <input
-            type="text"
-            name="story"
-            id="story"
-            placeholder="Your story..."
-          />
+      <form>
+        <div class="content">
+          <div class="text-inputs">
+            <input type="text" name="title" id="title" placeholder="Title..." />
+            <input type="text" name="name" id="name" placeholder="Your name" />
+            <input
+              type="text"
+              name="story"
+              id="story"
+              placeholder="Your story..."
+            />
+          </div>
+          <input type="submit" name="submit" id="submit" value="Publish" />
         </div>
-        <input type="submit" name="submit" id="submit" value="Publish" />
       </form>
     </main>
   </body>

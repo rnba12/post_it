@@ -13,11 +13,12 @@ async function postForm(e) {
     body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
   };
 
-  window.location.href = console.log(options.body);
+  console.log(options.body);
 
-  await fetch(url, options).then((res) =>
-    res.json().then((data) => {
-      console.log(data);
-    })
-  );
+  window.location.href = "./static/html/post.html";
+  //   await fetch(url, options).then((res) =>
+  //     res.json().then((data) => {
+  //       console.log(data);
+  //     })
+  //   );
 }
