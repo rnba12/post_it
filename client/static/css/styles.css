@@ -13,7 +13,7 @@ main {
   flex-direction: column;
   align-items: center;
   width: 75%;
-  margin: 50px auto;
+  margin: 80px auto 50px;
   row-gap: 30px;
 }
 
@@ -31,6 +31,7 @@ main {
   justify-content: space-between;
   align-items: center;
   width: 50%;
+  min-width: 260px;
   border-radius: 20px;
   border: 1px solid black;
   overflow: hidden;
@@ -121,7 +122,7 @@ main {
 
 #story {
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   resize: none;
   letter-spacing: 0.7px;
   color: rgb(51, 51, 51);
@@ -166,4 +167,31 @@ main {
 .error::-webkit-input-placeholder {
   transition: color 0.2s;
   color: rgb(255, 90, 82);
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .text-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .title-label,
+  .name-label {
+    text-align: left;
+    padding-bottom: 0;
+    border-right: none;
+  }
+
+  #title,
+  #author {
+    padding-top: 0;
+  }
+
+  #story {
+    font-size: 1rem;
+  }
 }
