@@ -5,6 +5,7 @@ const authorInput = document.querySelector("#author");
 const nameLabel = document.querySelector(".name-label");
 const storyInput = document.querySelector("#story");
 const errorMessage = document.querySelector(".error-message");
+const findPostBtn = document.querySelector(".find-post-btn");
 
 form.addEventListener("submit", postForm);
 
@@ -58,6 +59,10 @@ findPostInput.addEventListener("keypress", (e) => {
   if (e.key == "Enter") {
     window.location.href = `./post.html?id=${findPostInput.value}`;
   }
+});
+
+findPostBtn.addEventListener("click", () => {
+  window.location.href = `./post.html?id=${findPostInput.value}`;
 });
 
 //
