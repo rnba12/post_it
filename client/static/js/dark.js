@@ -1,4 +1,4 @@
-const style = document.querySelector('head').querySelector('link')
+const style = document.querySelector('head').getElementsByTagName('link')[1]
 
 if (!(sessionStorage.getItem('dark'))) {
     sessionStorage.setItem('dark', "false")
@@ -16,7 +16,7 @@ function toggleDark() {
         style.setAttribute('href', './static/css/dark.css');
         sessionStorage.setItem('dark', "true")
     } else if (darkMode == "true") {
-        style.setAttribute('href', './static/css/styles.css');
+        style.setAttribute('href', './static/css/light.css');
         sessionStorage.setItem('dark', "false")
     }
 } 
