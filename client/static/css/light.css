@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  #backBtn {
+    color: rgb(51, 51, 51);
+  }
+  
+  #themeBtn {
+    content: url("../images/moon.png");
+  }
+  
+  .find-post-container {
+    border: 1px solid black;
+  }
+  
+  .title-label {
+    color: rgb(117, 117, 117);
+  }
+  
+  .name-label {
+    color: rgb(117, 117, 117);
+  }
+  
+  #story {
+    color: rgb(51, 51, 51);
+  }
+  
+  #submit {
+    border: 2px solid black;
+  }
+
+  
