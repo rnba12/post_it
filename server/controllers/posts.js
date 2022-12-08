@@ -24,11 +24,23 @@ router.get("/:id", async (req, res) => {
 //create
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const newPost = await Post.create(req.body);
     res.status(201).json(newPost);
   } catch (err) {
     res.status(422).json({ err });
+  }
+});
+
+//update
+
+router.put("/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    const updatedPost = await post.update(req.body);
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    res.status(404).json({ err });
   }
 });
 

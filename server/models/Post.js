@@ -1,6 +1,5 @@
 const { init } = require("../dbConfig");
 const { ObjectId } = require("mongodb");
-const dayjs = require("dayjs");
 
 class Post {
   constructor(data) {
@@ -52,6 +51,29 @@ class Post {
         resolve(newPost);
       } catch (err) {
         reject("Error creating post");
+      }
+    });
+  }
+
+  update(body) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const db = await init();
+        let updatedPostData = await db.collection("posts").findOneAndUpdate(
+          { _id: ObjectId(this.id) },
+          {
+            $set: {
+              title: body.title,
+              author: body.author,
+              story: body.story,
+            },
+          }
+        );
+        console.log(updatedPostData.value._id);
+        let updatedPost = new Post(updatedPostData.value);
+        resolve(updatedPost);
+      } catch (err) {
+        reject("Error updating post");
       }
     });
   }
